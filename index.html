@@ -19,11 +19,9 @@ body {
 
 .header {
   text-align: center;
-  margin-bottom: 20px;
 }
 
 .header h1 {
-  font-size: 24px;
   margin: 10px 0;
 }
 
@@ -37,7 +35,7 @@ body {
   border-radius: 18px;
   padding: 20px;
   margin: 15px 0;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
   border: 2px solid #2d5cff;
   position: relative;
 }
@@ -46,7 +44,7 @@ body {
   position: absolute;
   top: 10px;
   right: -30px;
-  background: #2d5cff;
+  background: linear-gradient(45deg,#2d5cff,#5a7cff);
   color: white;
   padding: 5px 40px;
   transform: rotate(45deg);
@@ -54,8 +52,9 @@ body {
 }
 
 .icon {
-  text-align: center;
-  font-size: 40px;
+  width: 60px;
+  display: block;
+  margin: auto;
 }
 
 .title {
@@ -73,18 +72,17 @@ body {
 .subtitle {
   text-align: center;
   color: gray;
-  margin-bottom: 10px;
 }
 
 .list {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 8px;
-  font-size: 14px;
+  margin-top: 10px;
 }
 
 .btn {
-  background: #2d5cff;
+  background: linear-gradient(to right,#2d5cff,#5a7cff);
   color: white;
   padding: 14px;
   border-radius: 12px;
@@ -94,17 +92,21 @@ body {
   margin-top: 15px;
 }
 
-/* WHY SECTION */
-.why {
-  margin-top: 20px;
+/* FORM */
+.form-box {
+  display: none;
+  background: white;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 15px;
 }
 
-.why h2 {
-  font-size: 22px;
-}
-
-.why p {
-  color: #555;
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
 }
 </style>
 </head>
@@ -121,7 +123,9 @@ body {
 <!-- RETAILER -->
 <div class="card">
   <div class="ribbon">Most Popular</div>
-  <div class="icon">🏪</div>
+
+  <img class="icon" src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png">
+
   <div class="title">Retailer</div>
   <div class="price">₹499</div>
   <div class="subtitle">One-Time Onboarding Fee</div>
@@ -137,12 +141,13 @@ body {
     <div>✔ And many more...</div>
   </div>
 
-  <button class="btn">Select Plan</button>
+  <button class="btn" onclick="openForm('retailer')">Select Plan</button>
 </div>
 
 <!-- DISTRIBUTOR -->
 <div class="card" style="border:none;">
-  <div class="icon">👤</div>
+  <img class="icon" src="https://cdn-icons-png.flaticon.com/512/1946/1946429.png">
+
   <div class="title">Distributor</div>
   <div class="price">₹999</div>
   <div class="subtitle">One-Time Onboarding Fee</div>
@@ -155,24 +160,55 @@ body {
     <div>✔ Dedicated Portal</div>
   </div>
 
-  <button class="btn">Select Plan</button>
+  <button class="btn" onclick="openForm('distributor')">Select Plan</button>
 </div>
 
-<!-- WHY -->
-<div class="why">
-  <h2>Why Partner With Us?</h2>
+<!-- FORM -->
+<div class="form-box" id="formBox">
+  <h3 id="planTitle"></h3>
 
-  <p><b>🚀 Instant Onboarding</b><br>
-  Start your business within minutes with our fast e-KYC process.</p>
+  <input placeholder="Full Name">
+  <input placeholder="Father Name">
+  <input type="date">
+  <input placeholder="Shop Name">
+  <input placeholder="Email">
+  <input placeholder="Mobile">
+  <input placeholder="PAN">
+  <input placeholder="Aadhar">
 
-  <p><b>🔒 100% Secure</b><br>
-  RBI compliant & multi-layer security for all your transactions.</p>
+  <select>
+    <option>Select Gender</option>
+    <option>Male</option>
+    <option>Female</option>
+  </select>
 
-  <p><b>🎧 Dedicated Support</b><br>
-  Get instant help via call, WhatsApp, and email.</p>
+  <input placeholder="Address">
+  <input placeholder="City">
+  <input placeholder="Pincode">
+
+  <p>💳 Pay via UPI: yourname@upi</p>
+
+  <button class="btn">Create My Account</button>
 </div>
 
 </div>
+
+<script>
+function openForm(plan){
+  document.getElementById("formBox").style.display = "block";
+
+  if(plan === "retailer"){
+    document.getElementById("planTitle").innerText = "Retailer Registration ₹499";
+  } else {
+    document.getElementById("planTitle").innerText = "Distributor Registration ₹999";
+  }
+
+  window.scrollTo({
+    top: document.body.scrollHeight,
+    behavior: 'smooth'
+  });
+}
+</script>
 
 </body>
 </html>
