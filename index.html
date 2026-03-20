@@ -21,15 +21,10 @@ body {
   text-align: center;
 }
 
-.header h1 {
-  margin: 10px 0;
-}
-
 .header p {
   color: gray;
 }
 
-/* CARD */
 .card {
   background: white;
   border-radius: 18px;
@@ -92,7 +87,6 @@ body {
   margin-top: 15px;
 }
 
-/* FORM */
 .form-box {
   display: none;
   background: white;
@@ -127,14 +121,13 @@ input, select {
   <img class="icon" src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png">
 
   <div class="title">Retailer</div>
-  <div class="price">₹499</div>
+  <div class="price">₹399</div>
   <div class="subtitle">One-Time Onboarding Fee</div>
 
   <div class="list">
     <div>✔ AEPS</div>
     <div>✔ Aadhar Pay</div>
 
-    <div>✔ Free Account Opening</div>
     <div>✔ Saving & Current</div>
 
     <div>✔ Recharges</div>
@@ -189,7 +182,7 @@ input, select {
   <input placeholder="City">
   <input placeholder="Pincode">
 
-  <p>💳 Pay via UPI: yourname@upi</p>
+  <p>💳 Pay via UPI: Q99636372@ybl</p>
 
   <button class="btn">Create My Account</button>
 </div>
@@ -201,7 +194,7 @@ function openForm(plan){
   document.getElementById("formBox").style.display = "block";
 
   if(plan === "retailer"){
-    document.getElementById("planTitle").innerText = "Retailer Registration ₹499";
+    document.getElementById("planTitle").innerText = "Retailer Registration ₹399";
   } else {
     document.getElementById("planTitle").innerText = "Distributor Registration ₹999";
   }
