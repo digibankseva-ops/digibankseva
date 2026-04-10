@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,9 +13,7 @@ body{
   margin:0;
 }
 
-.container{
-  padding:20px;
-}
+.container{padding:20px;}
 
 .logo{
   display:block;
@@ -39,7 +37,6 @@ body{
   margin-bottom:20px;
 }
 
-/* CARD */
 .card{
   background:white;
   border-radius:20px;
@@ -49,7 +46,6 @@ body{
   position:relative;
 }
 
-/* RIBBON */
 .ribbon{
   position:absolute;
   top:15px;
@@ -58,13 +54,10 @@ body{
   color:white;
   padding:6px 50px;
   transform:rotate(45deg);
-  font-size:12px;
 }
 
-/* ICON */
 .icon-box{
-  width:80px;
-  height:80px;
+  width:80px;height:80px;
   background:#fff3e0;
   border-radius:50%;
   display:flex;
@@ -73,22 +66,10 @@ body{
   margin:auto;
 }
 
-.icon-box img{
-  width:45px;
-}
+.icon-box img{width:45px;}
 
-/* TEXT */
-.title{
-  text-align:center;
-  font-size:22px;
-  font-weight:600;
-}
-
-.price{
-  text-align:center;
-  font-size:32px;
-  font-weight:700;
-}
+.title{text-align:center;font-size:22px;font-weight:600;}
+.price{text-align:center;font-size:32px;font-weight:700;}
 
 .subprice{
   text-align:center;
@@ -97,7 +78,6 @@ body{
   margin-bottom:15px;
 }
 
-/* LIST */
 .list{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -110,7 +90,6 @@ body{
   color:#ff5722;
 }
 
-/* BUTTON */
 .btn{
   margin-top:20px;
   width:100%;
@@ -122,7 +101,6 @@ body{
   font-size:16px;
 }
 
-/* FORM */
 .form-box{
   display:none;
   background:white;
@@ -145,62 +123,59 @@ input,select{
 
 <div class="container">
 
-<!-- LOGO -->
 <img src="finmitra.png" class="logo">
 
-<!-- BRAND -->
 <div class="brand">FinMitra AEPS</div>
 
-<!-- BOLD TEXT -->
 <div class="sub">
 Choose your plan below to start your digital financial journey with us.
 </div>
 
 <!-- RETAILER -->
 <div class="card">
-  <div class="ribbon">Most Popular</div>
+<div class="ribbon">Most Popular</div>
 
-  <div class="icon-box">
-    <img src="https://cdn-icons-png.flaticon.com/512/2838/2838912.png">
-  </div>
+<div class="icon-box">
+<img src="https://cdn-icons-png.flaticon.com/512/2838/2838912.png">
+</div>
 
-  <div class="title">Retailer</div>
-  <div class="price">₹499</div>
+<div class="title">Retailer</div>
+<div class="price">₹499</div>
 
-  <div class="subprice">One-Time Onboarding Fee</div>
+<div class="subprice">One-Time Onboarding Fee</div>
 
-  <div class="list">
-    <div>AEPS</div>
-    <div>Aadhar Pay</div>
-    <div>Account Opening</div>
-    <div>Recharge</div>
-    <div>Money Transfer</div>
-    <div>Micro ATM</div>
-  </div>
+<div class="list">
+<div>AEPS</div>
+<div>Aadhar Pay</div>
+<div>Account Opening</div>
+<div>Recharge</div>
+<div>Money Transfer</div>
+<div>Micro ATM</div>
+</div>
 
-  <button class="btn" onclick="openForm('retailer')">Select Plan</button>
+<button class="btn" onclick="openForm('retailer')">Select Plan</button>
 </div>
 
 <!-- DISTRIBUTOR -->
 <div class="card">
 
-  <div class="icon-box">
-    <img src="https://cdn-icons-png.flaticon.com/512/921/921347.png">
-  </div>
+<div class="icon-box">
+<img src="https://cdn-icons-png.flaticon.com/512/921/921347.png">
+</div>
 
-  <div class="title">Distributor</div>
-  <div class="price">₹999</div>
+<div class="title">Distributor</div>
+<div class="price">₹999</div>
 
-  <div class="subprice">One-Time Onboarding Fee</div>
+<div class="subprice">One-Time Onboarding Fee</div>
 
-  <div class="list">
-    <div>Unlimited Retailers</div>
-    <div>High Commission</div>
-    <div>24x7 Support</div>
-    <div>Lifetime</div>
-  </div>
+<div class="list">
+<div>Unlimited Retailers</div>
+<div>High Commission</div>
+<div>24x7 Support</div>
+<div>Lifetime</div>
+</div>
 
-  <button class="btn" onclick="openForm('distributor')">Select Plan</button>
+<button class="btn" onclick="openForm('distributor')">Select Plan</button>
 </div>
 
 <!-- FORM -->
@@ -211,9 +186,10 @@ Choose your plan below to start your digital financial journey with us.
 <input id="father" placeholder="Father Name *">
 <input id="shop" placeholder="Shop Name *">
 <input id="email" placeholder="Email *">
-<input id="mobile" placeholder="Mobile *">
+
+<input id="mobile" type="tel" inputmode="numeric" maxlength="10" placeholder="Mobile Number *">
 <input id="pan" placeholder="PAN *">
-<input id="aadhaar" placeholder="Aadhaar *">
+<input id="aadhaar" type="tel" inputmode="numeric" maxlength="12" placeholder="Aadhaar Number *">
 
 <select id="gender">
 <option value="">Select Gender</option>
@@ -224,7 +200,7 @@ Choose your plan below to start your digital financial journey with us.
 <input id="address" placeholder="Address *">
 <input id="state" placeholder="State *">
 <input id="city" placeholder="City *">
-<input id="pincode" placeholder="Pincode *">
+<input id="pincode" type="tel" inputmode="numeric" maxlength="6" placeholder="Pincode *">
 
 <button class="btn" onclick="submitForm()">Create My Account</button>
 </div>
@@ -234,7 +210,6 @@ Choose your plan below to start your digital financial journey with us.
 <h3>Complete Payment</h3>
 
 <p style="font-weight:600;">Amount: <b id="amount"></b></p>
-
 <p style="font-weight:600;">UPI: <b>Q99636372@ybl</b></p>
 
 <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=Q99636372@ybl"
@@ -261,9 +236,26 @@ function submitForm(){
 
 let name=document.getElementById("name").value;
 let mobile=document.getElementById("mobile").value;
+let aadhaar=document.getElementById("aadhaar").value;
+let pincode=document.getElementById("pincode").value;
 
-if(name==""||mobile==""){
-  alert("⚠️ Fill required fields");
+if(name=="" || mobile=="" || aadhaar=="" || pincode==""){
+  alert("⚠️ Fill all required fields");
+  return;
+}
+
+if(mobile.length!==10){
+  alert("❌ Mobile must be 10 digits");
+  return;
+}
+
+if(aadhaar.length!==12){
+  alert("❌ Aadhaar must be 12 digits");
+  return;
+}
+
+if(pincode.length!==6){
+  alert("❌ Pincode must be 6 digits");
   return;
 }
 
@@ -272,7 +264,7 @@ document.getElementById("paymentBox").style.display="block";
 document.getElementById("amount").innerText =
 plan==="retailer" ? "₹499" : "₹999";
 
-alert("✅ Form Submitted");
+alert("✅ Form Submitted Successfully");
 
 }
 
